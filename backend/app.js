@@ -4,7 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
-
+dotenv.config();
 const Connection = require("./database/db.js");
 
 const Routes = require("./routes/route.js");
@@ -12,7 +12,7 @@ const Routes = require("./routes/route.js");
 const app = express();
 const port = 8081;
 
-dotenv.config();
+
 // const username = process.env.DB_USERNAME;
 // const password = process.env.DB_PASSWORD;
 
