@@ -1,8 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-// REMOVE: const dotenv = require("dotenv");
-// REMOVE: dotenv.config();
+
+// 🔍 DEBUG: Check if Railway is passing env vars
+console.log("=== RAILWAY ENV CHECK ===");
+console.log("MONGODB_URI exists?", !!process.env.MONGODB_URI);
+console.log("MONGODB_URI value:", process.env.MONGODB_URI ? "SET" : "NOT SET");
+console.log("NODE_ENV:", process.env.NODE_ENV);
+console.log("All env keys:", Object.keys(process.env).filter(k => k.includes('MONGO')));
+console.log("========================");
 
 const Connection = require("./database/db.js");
 const Routes = require("./routes/route.js");
