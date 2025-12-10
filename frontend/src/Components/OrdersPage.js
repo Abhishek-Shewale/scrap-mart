@@ -172,6 +172,7 @@ import {
 
 import axios from "axios";
 import { format } from "date-fns";
+import { API_BASE_URL } from '../config';
 
 const OrdersPage = ({ loggedInUser }) => {
   const [orders, setOrders] = useState([]);
@@ -179,7 +180,7 @@ const OrdersPage = ({ loggedInUser }) => {
   const fetchOrders = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8081/orders/${loggedInUser}`
+        `${API_BASE_URL}/orders/${loggedInUser}`
       );
       if (response.status === 200) {
         setOrders(response.data);

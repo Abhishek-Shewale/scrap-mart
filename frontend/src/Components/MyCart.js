@@ -79,6 +79,7 @@ import {
   Button,
 } from "@mui/material";
 import axios from "axios";
+import { API_BASE_URL } from '../config';
 
 import { CartContext } from "./CartContext";
 
@@ -91,7 +92,7 @@ const MyCart = ({ loggedInUser }) => {
   const handleRequestPickup = async () => {
     try {
       setIsRequestingPickup(true);
-      const response = await axios.post("http://localhost:8081/orders", {
+      const response = await axios.post(`${API_BASE_URL}/orders`, {
         userId: loggedInUser,
         products: cartItems.map((item) => ({
           productId: item.productId,

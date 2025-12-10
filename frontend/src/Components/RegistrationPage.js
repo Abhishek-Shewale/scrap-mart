@@ -112,6 +112,7 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from '../config';
 
 const Container = styled(FormGroup)`
   width: 50%;
@@ -142,7 +143,7 @@ const RegistrationPage = () => {
     }
 
     try {
-      await axios.post("http://localhost:8081/users/register", {
+      await axios.post(`${API_BASE_URL}/users/register`, {
         firstName,
         lastName,
         email,

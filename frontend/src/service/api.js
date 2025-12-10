@@ -1,6 +1,7 @@
 import axios from "axios";
+import { API_BASE_URL } from '../config';
 
-const URL = "http://localhost:8081";
+const URL = API_BASE_URL;
 
 export const addProduct = async (data) => {
   try {

@@ -114,6 +114,7 @@ import {
 import { CartContext } from "./CartContext";
 
 import axios from "axios";
+import { API_BASE_URL } from '../config';
 
 
 const OrderSummary = ({ loggedInUser }) => {
@@ -136,7 +137,7 @@ const OrderSummary = ({ loggedInUser }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8081/orders/createOrder",
+        `${API_BASE_URL}/orders/createOrder`,
         {
           userId: loggedInUser,
           address: {
